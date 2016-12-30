@@ -9,5 +9,4 @@ RUN apk update \
 	&& rm -rf snidump \
 	&& apk del llvm gcc binutils musl-dev clang make pcre-dev libpcap-dev git \
 	&& rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
-ENTRYPOINT /usr/bin/snidump
-CMD -p -i eth0
+ENTRYPOINT [ "/usr/bin/snidump" ]
